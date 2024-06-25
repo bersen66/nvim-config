@@ -5,6 +5,9 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
   
     -- installation of plugins
+    
+    --colorscheme
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     -- file tree
     use {
@@ -13,13 +16,15 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         }
     }
-    
-    --syntax highliter
-    use('nvim-treesitter/nvim-treesitter', {run=':TSUpdate'})
 
-    --colorscheme
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
-    
+    -- dropbar
+    use({
+        'Bekaboo/dropbar.nvim',
+        requires = {
+          'nvim-telescope/telescope-fzf-native.nvim'
+        }
+    })
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -51,5 +56,8 @@ return require('packer').startup(function(use)
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         requires = { {"nvim-lua/plenary.nvim"} }
+    }
+    use {
+        'jbyuki/instant.nvim'
     }
 end)
