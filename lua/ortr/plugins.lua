@@ -25,6 +25,17 @@ return require('packer').startup(function(use)
         }
     })
 
+    use {
+        "kwkarlwang/bufjump.nvim",
+        config = function()
+            require("bufjump").setup({
+                forward_key = "<leader>+",
+                backward_key ="<leader>-",
+                on_success = nil,
+            })
+        end
+    }
+    
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
