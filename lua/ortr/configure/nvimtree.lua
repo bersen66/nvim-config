@@ -1,6 +1,6 @@
 require("nvim-tree").setup({
     disable_netrw = true,
-    hijack_netrw = true,
+    hijack_netrw = true, 
     sort = {
         sorter = "case_sensitive",
     },
@@ -18,6 +18,7 @@ require("nvim-tree").setup({
     },
     filters = {
         dotfiles = false,
+        git_ignored = false,
     },
     diagnostics = {
         enable = true,
@@ -25,6 +26,11 @@ require("nvim-tree").setup({
     git = {
         enable = true,
 
+    },
+    tab = {
+        sync = {
+            close=true
+        }
     }
 })
 

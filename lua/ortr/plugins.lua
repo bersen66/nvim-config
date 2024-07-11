@@ -4,7 +4,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- installation of plugins
+       
+   --installation of plugins
 
     --colorscheme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
