@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/lambdalisue/battery.vim"
   },
   ["bufjump.nvim"] = {
-    config = { "\27LJ\2\n|\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\16forward_key\15<leader>gf\20update_helptags\0\17backward_key\15<leader>gb\nsetup\fbufjump\frequire\0" },
+    config = { "\27LJ\2\n„\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\28Gathering install tasks\0\16forward_key\15<leader>gf\17backward_key\15<leader>gb\nsetup\fbufjump\frequire\0" },
     loaded = true,
     path = "/home/ortur/.local/share/nvim/site/pack/packer/start/bufjump.nvim",
     url = "https://github.com/kwkarlwang/bufjump.nvim"
@@ -191,6 +191,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/home/ortur/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -210,9 +211,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 -- Config for: bufjump.nvim
 time([[Config for bufjump.nvim]], true)
-try_loadstring("\27LJ\2\n|\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\16forward_key\15<leader>gf\20update_helptags\0\17backward_key\15<leader>gb\nsetup\fbufjump\frequire\0", "config", "bufjump.nvim")
+try_loadstring("\27LJ\2\n„\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\28Gathering install tasks\0\16forward_key\15<leader>gf\17backward_key\15<leader>gb\nsetup\fbufjump\frequire\0", "config", "bufjump.nvim")
 time([[Config for bufjump.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

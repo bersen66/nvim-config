@@ -4,12 +4,13 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-       
+
    --installation of plugins
 
     --colorscheme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
+    use ({'yamatsum/nvim-cursorline'})
     -- file tree
     use {
         'nvim-tree/nvim-tree.lua',
@@ -43,7 +44,7 @@ return require('packer').startup(function(use)
             })
         end
     }
-    
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',

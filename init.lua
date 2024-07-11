@@ -14,4 +14,5 @@ require "ortr.configure.dropbar"
 require "ortr.configure.nvimtree"
 require "ortr.configure.toggleterm"
 require "ortr.configure.trailing"
+require  "ortr.configure.cursorline"
 vim.ui.select = require('dropbar.utils.menu').select
