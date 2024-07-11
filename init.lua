@@ -10,4 +10,5 @@ require "ortr.configure.telescope"
 require "ortr.configure.harpoon"
 require "ortr.configure.dropbar"
 require "ortr.configure.nvimtree"
+require "ortr.configure.toggleterm"
 vim.ui.select = require('dropbar.utils.menu').select

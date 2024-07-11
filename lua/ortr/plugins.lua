@@ -3,9 +3,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-  
+
     -- installation of plugins
-    
+
     --colorscheme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
@@ -17,6 +17,11 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- terminal
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+    end}
+
     -- dropbar
     use({
         'Bekaboo/dropbar.nvim',
@@ -24,13 +29,15 @@ return require('packer').startup(function(use)
           'nvim-telescope/telescope-fzf-native.nvim'
         }
     })
+    -- trailing spaces
+    use {'jdhao/whitespace.nvim', event = 'VimEnter'}
 
     use {
         "kwkarlwang/bufjump.nvim",
         config = function()
             require("bufjump").setup({
-                forward_key = "<leader>+",
-                backward_key ="<leader>-",
+                forward_key = "<leader>gf",
+                backward_key ="<leader>gb",
                 on_success = nil,
             })
         end

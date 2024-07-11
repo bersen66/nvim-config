@@ -84,6 +84,12 @@ _G.packer_plugins = {
     path = "/home/ortur/.local/share/nvim/site/pack/packer/start/battery.vim",
     url = "https://github.com/lambdalisue/battery.vim"
   },
+  ["bufjump.nvim"] = {
+    config = { "\27LJ\2\n|\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\16forward_key\15<leader>gf\20update_helptags\0\17backward_key\15<leader>gb\nsetup\fbufjump\frequire\0" },
+    loaded = true,
+    path = "/home/ortur/.local/share/nvim/site/pack/packer/start/bufjump.nvim",
+    url = "https://github.com/kwkarlwang/bufjump.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/ortur/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -184,14 +190,37 @@ _G.packer_plugins = {
     path = "/home/ortur/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/home/ortur/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/ortur/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
+  },
+  ["whitespace.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/ortur/.local/share/nvim/site/pack/packer/opt/whitespace.nvim",
+    url = "https://github.com/jdhao/whitespace.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: bufjump.nvim
+time([[Config for bufjump.nvim]], true)
+try_loadstring("\27LJ\2\n|\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\16forward_key\15<leader>gf\20update_helptags\0\17backward_key\15<leader>gb\nsetup\fbufjump\frequire\0", "config", "bufjump.nvim")
+time([[Config for bufjump.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'whitespace.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

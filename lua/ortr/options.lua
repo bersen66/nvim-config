@@ -10,3 +10,4 @@ vim.cmd('set shiftwidth=4') -- shift with << and >>
 vim.cmd('set softtabstop=4') -- number of spaces that a <Tab> counts for while performing editing operations  
 vim.cmd('set expandtab') -- tab is spaces
 vim.cmd('set autoindent') -- copy blanks from previous line
+vim.cmd('set nowrap')
