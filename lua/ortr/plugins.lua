@@ -6,6 +6,7 @@ return require('packer').startup(function(use)
 
 
    --installation of plugins
+    use({'tpope/vim-commentary'})
 
     --colorscheme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
