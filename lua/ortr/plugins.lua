@@ -10,34 +10,31 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
+        run = ':TSUpdate', -- Упрощенный синтаксис обновления
         config = function()
-            require('nvim-treesitter.configs').setup({
+            -- Изменили 'nvim-treesitter.configs' на просто 'nvim-treesitter'
+            require('nvim-treesitter').setup({
                 -- Список языков для автоматической установки
                 ensure_installed = { "cpp", "c", "lua", "vim", "vimdoc" },
 
-                -- Автоматическая установка отсутствующих парсеров при входе в буфер
+                -- Автоматическая установка отсутствующих парсеров
                 auto_install = true,
 
                 highlight = {
-                    enable = true, -- Включает умную подсветку
+                    enable = true,
                     additional_vim_regex_highlighting = false,
                 },
             })
         end
     }
-
     --colorscheme
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     use ({'yamatsum/nvim-cursorline'})
+
     -- file tree
     use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
+        'nvim-tree/nvim-tree.lua', requires = {
             'nvim-tree/nvim-web-devicons', -- optional
         }
     }
@@ -90,11 +87,19 @@ return require('packer').startup(function(use)
     }
     use {'vim-airline/vim-airline'}
     use {'lambdalisue/battery.vim'}
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.5',
-      requires = {
-        {'nvim-lua/plenary.nvim'}
-      }
+
+    -- use {'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    --   requires = {
+    --     {'nvim-lua/plenary.nvim'}
+    --   }
+    -- }
+
+    use {
+        'nvim-telescope/telescope.nvim',
+        -- branch = '0.1.x', -- Это обеспечит совместимость с новым Neovim
+        requires = { {'nvim-lua/plenary.nvim'} }
     }
+
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -176,4 +181,33 @@ return require('packer').startup(function(use)
 
     -- Better clangd
     use "p00f/clangd_extensions.nvim"
+
+    -- -- Tests support
+    -- use {
+    --   "nvim-neotest/neotest",
+    --   requires = {
+    --     "nvim-neotest/nvim-nio",
+    --     "nvim-lua/plenary.nvim",
+    --     "antoinemadec/FixCursorHold.nvim",
+    --     "nvim-treesitter/nvim-treesitter",
+    --     "orjangj/neotest-ctest"
+    --   },
+    --   config = function()
+    --     require("neotest").setup({
+    --       adapters = {
+    --         require("neotest-ctest").setup({
+    --           -- Здесь можно указать путь к build-директории, если она не стандартная
+    --           -- build_dir = "build",
+    --         }),
+    --       },
+    --       -- Можно добавить красивые иконки для статусов
+    --       icons = {
+    --         passed = "",
+    --         running = "",
+    --         failed = "",
+    --         skipped = "󰜺",
+    --         unknown = ""
+    --       },
+    --     })
+    --   end}
 end)

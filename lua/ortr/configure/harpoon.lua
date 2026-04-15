@@ -59,5 +59,13 @@ vim.keymap.set("n", "<leader>jf", "<C-i>", { desc = "Jump Forward (Next position
 -- Открыть keymaps
 vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Search Keymaps" })
 
+-- git-status search
+vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git: status" })
+
+--git stash search
+vim.keymap.set("n", "<leader>gp", "<cmd>Telescope git_stash<cr>", { desc = "Git: stash" })
+
+--git branch search
+vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Git: branches" })
 
 vim.lsp.inlay_hint.enable(true)
