@@ -40,3 +40,24 @@ vim.keymap.set("n", "<leader>9", function() harpoon:list():select(9) end)
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<leader>nm", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<leader>nn", function() harpoon:list():next() end)
+
+-- Посмотреть все метки проекта
+vim.keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Search Marks" })
+
+-- Открыть jumplist
+vim.keymap.set("n", "<leader>jl", "<cmd>Telescope jumplist<cr>", { desc = "Open Jumplist" })
+
+-- Прыгнуть к объявлению
+vim.keymap.set("n", "<leader>jd", vim.lsp.buf.definition, { desc = "Jump to defenition" })
+
+-- Прыгнуть обратно
+vim.keymap.set("n", "<leader>jb", "<C-o>", { desc = "Jump Backwards (Previous position)" })
+
+-- Прыгнуть вперед
+vim.keymap.set("n", "<leader>jf", "<C-i>", { desc = "Jump Forward (Next position)" })
+
+-- Открыть keymaps
+vim.keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Search Keymaps" })
+
+
+vim.lsp.inlay_hint.enable(true)
